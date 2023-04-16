@@ -1,0 +1,1 @@
+# speaker_recognition_friends_qdrant

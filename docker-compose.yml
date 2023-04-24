@@ -1,0 +1,30 @@
+version: "3.3"
+
+
+services:
+  web:
+    user: root
+    build: .
+    container_name: qdrant_demo_friends
+    ports:
+      - 8050:8050
+    environment:
+      - QDRANT_HOST=qdrant
+    depends_on:
+      - qdrant
+    networks:
+      - qdrant-net
+  qdrant:
+    image: qdrant/qdrant:v0.10.1
+    ports:
+    - 6333:6333
+    volumes:
+      - ./data/qdrant_storage:/qdrant/storage
+
+    networks:
+      - qdrant-net
+
+networks:
+  qdrant-net:
+    external:
+      name: qdrant-net

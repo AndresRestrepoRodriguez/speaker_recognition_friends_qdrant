@@ -1,0 +1,6 @@
+Cython==0.29.34
+nemo-toolkit[asr]==1.17.0
+omegaconf==2.2.3
+numpy==1.23.5
+qdrant-client==1.1.5
+streamlit==1.21.0

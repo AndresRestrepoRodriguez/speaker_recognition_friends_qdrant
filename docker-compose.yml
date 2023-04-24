@@ -13,7 +13,7 @@ services:
     depends_on:
       - qdrant
     networks:
-      - qdrant-net
+      - local
   qdrant:
     image: qdrant/qdrant:v0.10.1
     ports:
@@ -22,9 +22,8 @@ services:
       - ./data/qdrant_storage:/qdrant/storage
 
     networks:
-      - qdrant-net
+      - local
 
 networks:
-  qdrant-net:
-    external:
-      name: qdrant-net
+  local:
+    driver: bridge

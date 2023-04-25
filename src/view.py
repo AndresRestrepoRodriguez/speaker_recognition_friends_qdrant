@@ -92,7 +92,6 @@ if __name__ == '__main__':
     json_file = os.path.join(DATA_DIR, 'data_config.json')
     input_file = open(json_file)
     json_array = json.load(input_file)
-    random.shuffle(json_array)
     splitted_data = list(divide_chunks(json_array, COLUMNS))
     generate_view(splitted_data, controller)
 
